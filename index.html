@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Crypto Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1> Bitcoin Rates </h1>
+  
+  <div class = 'results' id='result2'>
+    <h2>Testing</h2>
+    </div>
+
+  <form>
+    <label>Want a different currency?</label>
+    <br/>
+    <label>Select Currency</label>
+    <select id="currency_selector">
+      <option value="CHF">Swiss Franc</option>
+      <option value="CNY">Chinese Yuan</option>
+      <option value="DKK">Danish Krone</option>
+      <option value="HKD">Hong Kong Dollar</option>
+      <option value="JPY">Japanese Yen</option>
+      <option value="PHP">Phillipine Peso</option>
+    </select>
+    <br/>
+    <button id="submit3" class="pure-button pure-button-primary">Submit</button>
+  </form>
+
+  <div class = 'results' id='result3'>
+  </div>
+
+  <h1>Other Crypto Rates</h1>
+
+  <form>
+    <label>Select Cryptocurrency</label>
+    <select id="selector">
+      <option value="BTC">Bitcoin</option>
+      <option value="ETC">Ethereum</option>
+      <option value="BCH">Bitcoin Cash</option>
+      <option value="LTC">Litecoin</option>
+    </select>
+    <br/>
+    <label>Select Date</label>
+    <select id="date_selector">
+      <option value="current">Current</option>
+      <option value="2021">January 2021</option>
+      <option value="2020">January 2020</option>
+      <option value="2019">January 2019</option>
+      <option value="2018">January 2018</option>
+    </select>
+    <br/>
+    <button id="submit" class="pure-button pure-button-primary">Submit</button>
+  </form>
+
+  <div class = 'results' id='result'>
+  </div>
+
+  <!-- new -->
+
+  <script text="type/javascript" src="/script.js">
+  </script>
+
+  <div class='footer'>
+    <p><a href = "https://github.com/jcdansie/crypto-website" target="_blank">Github Link</a></p>
+  </div>
+
+</body>
+
+</html>
