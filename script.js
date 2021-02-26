@@ -1,27 +1,27 @@
-let url1 = "https://api.coindesk.com/v1/bpi/currentprice.json";
-let bitcoinPrices = "";
-// call API
-fetch(url1)
-  .then(function(response) {
-    // make sure the request was successful
-    if (response.status != 200) {
-      return {
-        text: "Error calling the API service: " + response.statusText
+//function onClick2(e) {
+  //e.preventDefault();
+
+  let url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+  let bitcoinPrices = "";
+  // call API
+  fetch(url)
+    .then(function(response) {
+      // make sure the request was successful
+      if (response.status != 200) {
+        return {
+          text: "Error calling the API service: " + response.statusText
+        }
       }
-    }
-    return response.json();
-  }).then(function(json) {
-    // update DOM with response
-    console.log(json);
-    bitcoinPrices += '<div class = "item"><h2>USD: ' + json.bpi.USD.symbol + json.bpi.USD.rate + '</h2></div>';
-    bitcoinPrices += '<div class = "item"><h2>EUR: ' + json.bpi.EUR.symbol + json.bpi.EUR.rate + '</h2></div>';
-    bitcoinPrices += '<div class = "item"><h2>GBP: ' + json.bpi.GBP.symbol + json.bpi.GBP.rate + '</h2></div>';
+      return response.json();
+    }).then(function(json) {
+      // update DOM with response
+      bitcoinPrices += '<div class = "item"><h2>USD: ' + json.bpi.USD.symbol + json.bpi.USD.rate + '</h2></div>';
+      bitcoinPrices += '<div class = "item"><h2>EUR: ' + json.bpi.EUR.symbol + json.bpi.EUR.rate + '</h2></div>';
+      bitcoinPrices += '<div class = "item"><h2>GBP: ' + json.bpi.GBP.symbol + json.bpi.GBP.rate + '</h2></div>';
 
-    console.log(bitcoinPrices);
-    document.getElementById('result2').innterHTML = bitcoinPrices;
-    console.log(document.getElementById('result2').innterHTML);
-  });
-
+      document.getElementById('result2').innerHTML = bitcoinPrices;
+    });
+//}
 
 function onClick(e) {
   e.preventDefault();
@@ -47,7 +47,6 @@ function onClick(e) {
       return response.json();
     }).then(function(json) {
       // update DOM with response
-      console.log(json);
 
       results += '<div class = "item"><h2>Current Price: ' + json.rates[crypto_name] + ' USD</h2></div>';
       //add times spans
@@ -71,7 +70,6 @@ function onClick(e) {
           return response.json();
         }).then(function(json) {
           // update DOM with response
-          console.log(json);
 
           results += '<div class = "item"><h2>Price at start of ' + date + ': ' + json.rates[crypto_name] + ' USD</h2></div>';
 
@@ -80,7 +78,7 @@ function onClick(e) {
     }
 }
 
-function onClick2(e) {
+function onClick3(e) {
   e.preventDefault();
 
   let s = document.getElementById('currency_selector');
@@ -100,7 +98,6 @@ function onClick2(e) {
       return response.json();
     }).then(function(json) {
       // update DOM with response
-      console.log(json);
       if(currency === 'CHF'){
           results += '<div class = "item"><h2>Current Price: ' + json.bpi.CHF.rate + " " + json.bpi.CHF.code + '</h2></div>';
       } else if(currency === 'CNY'){
@@ -124,4 +121,5 @@ function updateResult(info) {
 }
 
 document.getElementById('submit').addEventListener('click', onClick);
-document.getElementById('submit3').addEventListener('click', onClick2);
+document.getElementById('submit3').addEventListener('click', onClick3);
+//document.getElementById('submit2').addEventListener('click', onClick2);
